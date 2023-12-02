@@ -21,7 +21,18 @@ for module in modules_used:
         original_imported_modules[module] = sys.modules.pop(module)
 
 # Proceed with node setup
-from .nodes import NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS
+from upscale_nodes import UltimateSDUpscale, UltimateSDUpscaleNoUpscale
+
+NODE_CLASS_MAPPINGS = {
+    "UltimateSDUpscale": UltimateSDUpscale,
+    "UltimateSDUpscaleNoUpscale": UltimateSDUpscaleNoUpscale
+}
+
+# A dictionary that contains the friendly/humanly readable titles for the nodes
+NODE_DISPLAY_NAME_MAPPINGS = {
+    "UltimateSDUpscale": "Ultimate SD Upscale",
+    "UltimateSDUpscaleNoUpscale": "Ultimate SD Upscale (No Upscale)"
+}
 __all__ = ["NODE_CLASS_MAPPINGS", "NODE_DISPLAY_NAME_MAPPINGS"]
 
 # Clean up imports

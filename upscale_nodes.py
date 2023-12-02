@@ -3,7 +3,7 @@
 import torch
 import comfy
 from usdu_patch import usdu
-from utils import tensor_to_pil, pil_to_tensor
+from upscale_utils import tensor_to_pil, pil_to_tensor
 from modules.processing import StableDiffusionProcessing
 import modules.shared as shared
 from modules.upscaler import UpscalerData
@@ -178,13 +178,4 @@ class UltimateSDUpscaleNoUpscale:
 
 # A dictionary that contains all nodes you want to export with their names
 # NOTE: names should be globally unique
-NODE_CLASS_MAPPINGS = {
-    "UltimateSDUpscale": UltimateSDUpscale,
-    "UltimateSDUpscaleNoUpscale": UltimateSDUpscaleNoUpscale
-}
 
-# A dictionary that contains the friendly/humanly readable titles for the nodes
-NODE_DISPLAY_NAME_MAPPINGS = {
-    "UltimateSDUpscale": "Ultimate SD Upscale",
-    "UltimateSDUpscaleNoUpscale": "Ultimate SD Upscale (No Upscale)"
-}
